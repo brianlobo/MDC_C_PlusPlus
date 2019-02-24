@@ -28,13 +28,13 @@ int main() {
     
     // Choice Validation
     if (choice != 'A' && choice != 'B' && choice != 'C')
-        cout << "Must enter a valid package.";
+        cout << "Must enter a valid package.\n";
     else
     {
         cout << "Enter how many minutes you used: ";
         cin >> minsUsed;
         if (minsUsed < 0)
-            cout << "Cannot enter a negative number.";
+            cout << "Cannot enter a negative number.\n";
         else
         {
             switch (choice)
