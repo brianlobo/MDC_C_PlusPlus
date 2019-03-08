@@ -1,0 +1,23 @@
+i = 0
+total = 0
+
+Get userNum
+smallest = userNum
+biggest = userNum
+
+while (userNum != -99)
+    if (userNum < smallest)
+        smallest = userNum
+    else if (userNum > biggest)
+        biggest = userNum
+    END IF
+    i = i + 1
+    total += num
+    get userNum
+END WHILE
+
+average = total / i
+
+display i, smallest, average, total
+
+END
