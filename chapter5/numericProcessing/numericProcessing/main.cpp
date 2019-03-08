@@ -15,21 +15,23 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-
 using namespace std;
 
-int main() {
+int main()
+{
     int  number, sum, i;
     float average;
+    ifstream file;
     
     i = sum = 0;
     
     
-    ifstream file;
+    // Open the file
     file.open("numbers.txt");
     cout << "\n\n\t\tReading data from the file...\n";
     cout << "\t\t=============================\n\n";
     
+    // Calcuates sum and total amount of numbers
     while(file >> number)
     {
         i++;
@@ -38,10 +40,19 @@ int main() {
     
     average = float(sum) / float(i);
     
-    cout << setw(23) << left << "\t\tAmount of numbers: " << setw(8) << right << i << endl;
-    cout << setw(23) << left << "\t\tSum of numbers: " << setw(8) << right << sum << endl;
-    cout << setw(23) << left << "\t\tAverage: " << setw(8) << right << setprecision(2) << fixed << average << "\n\n\n";
+    // Display Amount of #'s, Sum, Average
+    cout << setw(23) << left << "\t\tAmount of numbers: "
+        << setw(8) << right << i << endl;
     
+    cout << setw(23) << left << "\t\tSum of numbers: "
+        << setw(8) << right << sum << endl;
+    
+    cout << setw(23) << left << "\t\tAverage: " << setw(8)
+        << right << setprecision(2) << fixed << average
+        << "\n\n\n";
+    
+    
+    // Close file
     file.close();
     return 0;
 }
