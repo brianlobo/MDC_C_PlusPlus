@@ -1,4 +1,11 @@
-   #include <iostream>
+
+//       Practice with while loops)
+//
+//       Check if the user's password matches PASSWORD.
+//
+//       The user has 3 attempts.
+
+#include <iostream>
 #include <string>
 
 using namespace std;
