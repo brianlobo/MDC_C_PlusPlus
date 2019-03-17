@@ -19,40 +19,59 @@ using namespace std;
 
 int main()
 {
-    int  number, sum, i;
+    int  number, sum, i, largest, smallest;
     float average;
     ifstream file;
     
-    i = sum = 0;
-    
+    i = 0;
+    sum = 0;
     
     // Open the file
     file.open("numbers.txt");
     cout << "\n\n\t\tReading data from the file...\n";
     cout << "\t\t=============================\n\n";
     
-    // Calcuates sum and total amount of numbers
-    while(file >> number)
+    if (file)
     {
-        i++;
-        sum += number;
-    }
-    
-    average = float(sum) / float(i);
-    
-    // Display Amount of #'s, Sum, Average
-    cout << setw(23) << left << "\t\tAmount of numbers: "
+        // Calcuates sum and total amount of numbers
+        file >> number;
+        largest = smallest = number;
+        while(!file.eof())
+        {
+            if (largest < number)
+                largest = number;
+            else if (smallest > number)
+                smallest = number;
+            i++;
+            sum += number;
+            file >> number;
+        }
+        
+        average = float(sum) / float(i);
+        
+        // Display Amount of #'s, Sum, Average
+        cout << setw(23) << left << "\t\tLargest Number: "
+        << setw(8) << right << largest << endl;
+        
+        cout << setw(23) << left << "\t\tSmallest Number: "
+        << setw(8) << right << smallest << endl;
+        
+        cout << setw(23) << left << "\t\tAmount of numbers: "
         << setw(8) << right << i << endl;
-    
-    cout << setw(23) << left << "\t\tSum of numbers: "
+        
+        cout << setw(23) << left << "\t\tSum of numbers: "
         << setw(8) << right << sum << endl;
-    
-    cout << setw(23) << left << "\t\tAverage: " << setw(8)
+        
+        cout << setw(23) << left << "\t\tAverage: " << setw(8)
         << right << setprecision(2) << fixed << average
         << "\n\n\n";
-    
-    
-    // Close file
-    file.close();
+        
+        
+        // Close file
+        file.close();
+    }
+    else
+        cout << "Error opening the file.\n";
+
     return 0;
 }

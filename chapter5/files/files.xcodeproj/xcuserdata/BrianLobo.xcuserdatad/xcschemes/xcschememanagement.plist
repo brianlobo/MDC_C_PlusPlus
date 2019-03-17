@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>greatestAndLeast.xcscheme_^#shared#^_</key>
+		<key>files.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40A4C2632231AB660075292A</key>
+		<key>40B3E290223A8C44000E5C73</key>
 		<dict>
 			<key>primary</key>
 			<true/>
