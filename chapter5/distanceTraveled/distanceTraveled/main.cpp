@@ -48,8 +48,7 @@ int main() {
     cout << "\t----------------\n";
     for (int i = 1; i <= time; i++)
     {
-        cout << "\t" << setw(2) << i << " \t\t" << setw(5) << right << speed << endl;
-        speed *= 2;
+        cout << "\t" << setw(2) << i << " \t\t" << setw(5) << right << speed * i << endl;
     }
     
     cout << "\n\n";
